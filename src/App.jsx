@@ -1,4 +1,5 @@
 import { MovieCard } from "./MovieCard";
+import { MOVIES } from "./movies.data";
 
 function App() {
   return (
@@ -7,7 +8,13 @@ function App() {
         <img src="/netflix.png" alt="Netflix" className="h-8 w-auto" />
       </header>
       <main className="flex gap-6">
-        <MovieCard image={"/narcos.jpg"} rating={8.8} />
+        {MOVIES.map((movie) => (
+          <MovieCard
+            key={movie.name}
+            image={movie.image}
+            rating={movie.rating}
+          />
+        ))}
       </main>
     </div>
   );
