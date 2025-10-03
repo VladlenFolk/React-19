@@ -1,5 +1,5 @@
-import { useState } from "react";
-export function FavoriteButon() {
+import { memo, useState } from "react";
+function FavoriteButon() {
   const [isFavorite, setIsFavorite] = useState(false);
   return (
     <button onClick={() => setIsFavorite(!isFavorite)} type="button">
@@ -7,3 +7,5 @@ export function FavoriteButon() {
     </button>
   );
 }
+
+export default memo(FavoriteButon)
